@@ -29,7 +29,7 @@ export const Contact_page = () => {
         }}
       >
         <Typography sx={{ color: "white", mt: 6 }} variant="h4">
-          Contact Us
+          Contact Me
         </Typography>
         <ConnectWithoutContactIcon sx={{ fill: "red", fontSize: 40 }} />
 
