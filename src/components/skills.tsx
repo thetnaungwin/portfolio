@@ -138,6 +138,7 @@ export const Skills_page = () => {
           >
             {imgCollection.map((image) => (
               <CardMedia
+                key={image.name}
                 component="img"
                 alt="green iguana"
                 image={image.url}

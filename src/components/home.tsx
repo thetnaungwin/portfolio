@@ -86,9 +86,9 @@ export function Home_page() {
           duration: 0.7,
         }}
       >
-        Hello, I'm
-        <b style={{ color: "#F3CA52", fontSize: 18 }}> Thet Naung Win.</b> I'm a
-        <b style={{ color: "#F3CA52" }}> Software Engineer</b> with JavaScript
+        Hello, I am
+        <b style={{ color: "#F3CA52", fontSize: 18 }}> Thet Naung Win.</b> I am
+        a<b style={{ color: "#F3CA52" }}> Software Engineer</b> with JavaScript
         and C++{" "}
       </motion.p>
       <Box sx={{ display: "flex", justifyContent: "center", mt: 1 }}>

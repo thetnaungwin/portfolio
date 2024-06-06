@@ -17,6 +17,7 @@ export const Menu_Dialog = ({ open, setOpen }: Pros) => {
     >
       {links.map((link) => (
         <Link
+          key={link.hash}
           activeClass="active"
           to={link.hash}
           style={{
