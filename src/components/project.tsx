@@ -55,7 +55,7 @@ export const Project_page = () => {
             <Typography
               variant="body2"
               color="text.secondary"
-              sx={{ fontSize: { xs: 4, sm: 8, md: 15 } }}
+              sx={{ fontSize: { xs: 5, sm: 8, md: 15 }, mb: -1 }}
             >
               Reel is an Instagram feature that allows users to create
               short-form video content and share them on their Reels, Stories,
@@ -63,10 +63,13 @@ export const Project_page = () => {
             </Typography>
           </CardContent>
           <CardActions>
-            <Button size="small" sx={{ fontSize: { xs: 4, sm: 8, md: 15 } }}>
+            <Button size="small" sx={{ fontSize: { xs: 5, sm: 8, md: 15 } }}>
               <Link
                 href="https://reel-beta.vercel.app/"
-                style={{ textDecoration: "none", color: "#1976DB" }}
+                style={{
+                  textDecoration: "none",
+                  color: "#1976DB",
+                }}
               >
                 Learn More
               </Link>
@@ -86,7 +89,7 @@ export const Project_page = () => {
             component="img"
             alt="green iguana"
             image={image}
-            sx={{ padding: 1, height: 160, objectFit: "fill" }}
+            sx={{ padding: 1, objectFit: "fill" }}
           />
           <ArrowBackIosIcon
             onClick={() => {
@@ -114,7 +117,7 @@ export const Project_page = () => {
             <Typography
               variant="body2"
               color="text.secondary"
-              sx={{ fontSize: { xs: 4, sm: 8, md: 15 } }}
+              sx={{ fontSize: { xs: 5, sm: 8, md: 15 } }}
             >
               This single landing page serves as the gateway to these two major
               components of our POS app—bridging the gap between administrative
@@ -123,7 +126,7 @@ export const Project_page = () => {
             </Typography>
           </CardContent>
           <CardActions>
-            <Button size="small" sx={{ fontSize: { xs: 4, sm: 8, md: 15 } }}>
+            <Button size="small" sx={{ fontSize: { xs: 5, sm: 8, md: 15 } }}>
               <Link
                 href="https://foodie-pos-chi.vercel.app/"
                 style={{ textDecoration: "none", color: "#1976DB" }}
@@ -137,7 +140,7 @@ export const Project_page = () => {
           sx={{
             maxWidth: { xs: 130, sm: 180, md: 280 },
             mt: 7,
-            height: { xs: 150, sm: 220, md: 360 },
+            height: { xs: 160, sm: 220, md: 360 },
           }}
         >
           <CardMedia
@@ -153,7 +156,7 @@ export const Project_page = () => {
             <Typography
               variant="body2"
               color="text.secondary"
-              sx={{ fontSize: { xs: 4, sm: 8, md: 15 } }}
+              sx={{ fontSize: { xs: 5, sm: 8, md: 15 } }}
             >
               Digital marketing is the component of marketing that uses the
               Internet and online-based digital technologies such as desktop
