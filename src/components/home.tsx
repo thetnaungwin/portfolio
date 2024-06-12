@@ -92,17 +92,16 @@ export function Home_page() {
         and C++{" "}
       </motion.p>
       <Box sx={{ display: "flex", justifyContent: "center", mt: 1 }}>
-        <LinkedInIcon
-          onClick={() => {
-            console.log("Linkedin account");
-          }}
-          sx={{
-            fill: "#0072ea",
-            cursor: "pointer",
-            userSelect: "none",
-            fontSize: { xs: "normal", sm: "35px" },
-          }}
-        />
+        <Link href="https://www.linkedin.com/in/thet-naung-win-a17538313?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
+          <LinkedInIcon
+            sx={{
+              fill: "#0072ea",
+              cursor: "pointer",
+              userSelect: "none",
+              fontSize: { xs: "normal", sm: "35px" },
+            }}
+          />
+        </Link>
         <Link href="https://www.facebook.com/profile.php?id=100068834884655&mibextid=LQQJ4d">
           <FacebookIcon
             sx={{

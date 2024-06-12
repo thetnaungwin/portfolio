@@ -1,24 +1,77 @@
 import {
   Box,
   Button,
+  CircularProgress,
   DialogActions,
   DialogContent,
   TextField,
   Typography,
 } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ConnectWithoutContactIcon from "@mui/icons-material/ConnectWithoutContact";
+import emailjs from "@emailjs/browser";
 
 export const Contact_page = () => {
-  const [name, setName] = useState({});
-  const [email, setEmail] = useState({});
-  const [message, setMessage] = useState({});
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [missingData, setMissingData] = useState(true);
+  const [sendEmail, setSendEmail] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
-  const handleClick = () => {
-    console.log(name);
-    console.log(email);
-    console.log(message);
+  useEffect(() => {
+    if (
+      sendEmail.name !== "" &&
+      sendEmail.email !== "" &&
+      sendEmail.message !== ""
+    ) {
+      setMissingData(false);
+    } else {
+      setMissingData(true);
+    }
+  }, [sendEmail]);
+
+  const email = {
+    service_id: "service_z3vocwd",
+    template_id: "template_hfs6pvi",
+    public_id: "lY6aUlBkqrzhbPiPJ",
   };
+
+  const handleClick = (e: any) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    const templateParams = {
+      from_name: sendEmail.name,
+      from_email: sendEmail.email,
+      message: sendEmail.message,
+    };
+
+    emailjs
+      .send(
+        email.service_id,
+        email.template_id,
+        templateParams,
+        email.public_id
+      )
+      .then(
+        () => {
+          setIsLoading(false);
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      )
+      .finally(() =>
+        setSendEmail({
+          name: "",
+          email: "",
+          message: "",
+        })
+      );
+  };
+
   return (
     <Box id="#contact">
       <Box
@@ -42,6 +95,7 @@ export const Contact_page = () => {
               id="outlined-basic"
               label="Name"
               variant="outlined"
+              value={sendEmail.name}
               sx={{
                 mt: 2,
                 width: "100%",
@@ -63,9 +117,9 @@ export const Contact_page = () => {
                 },
               }}
               onChange={(evt) =>
-                setName({
-                  ...name,
-                  email: evt.target.value,
+                setSendEmail({
+                  ...sendEmail,
+                  name: evt.target.value,
                 })
               }
             />
@@ -73,6 +127,7 @@ export const Contact_page = () => {
               id="outlined-basic"
               label="Email"
               variant="outlined"
+              value={sendEmail.email}
               sx={{
                 mt: 2,
                 width: "100%",
@@ -94,9 +149,9 @@ export const Contact_page = () => {
                 },
               }}
               onChange={(evt) =>
-                setEmail({
-                  ...email,
-                  name: evt.target.value,
+                setSendEmail({
+                  ...sendEmail,
+                  email: evt.target.value,
                 })
               }
             />
@@ -104,6 +159,7 @@ export const Contact_page = () => {
               id="outlined-basic"
               label="Message"
               variant="outlined"
+              value={sendEmail.message}
               sx={{
                 mt: 2,
                 width: "100%",
@@ -125,18 +181,23 @@ export const Contact_page = () => {
                 },
               }}
               onChange={(evt) =>
-                setMessage({ ...message, message: evt.target.value })
+                setSendEmail({ ...sendEmail, message: evt.target.value })
               }
             />
           </Box>
         </DialogContent>
         <DialogActions>
           <Button
+            disabled={missingData}
             variant="contained"
             onClick={handleClick}
             sx={{ p: 1, mb: 7 }}
           >
-            Send Now
+            {isLoading ? (
+              <CircularProgress size={20} sx={{ color: "#E8F6EF" }} />
+            ) : (
+              "Send Now"
+            )}
           </Button>
         </DialogActions>
       </Box>
