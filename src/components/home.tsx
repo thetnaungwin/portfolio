@@ -88,8 +88,7 @@ export function Home_page() {
       >
         Hello, I am
         <b style={{ color: "#F3CA52", fontSize: 18 }}> Thet Naung Win.</b> I am
-        a<b style={{ color: "#F3CA52" }}> Software Engineer</b> with JavaScript
-        and C++{" "}
+        a<b style={{ color: "#F3CA52" }}> Programmer</b> with JavaScript and C++{" "}
       </motion.p>
       <Box sx={{ display: "flex", justifyContent: "center", mt: 1 }}>
         <Link href="https://www.linkedin.com/in/thet-naung-win-a17538313?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
