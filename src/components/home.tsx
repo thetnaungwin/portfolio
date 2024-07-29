@@ -140,7 +140,7 @@ export function Home_page() {
           sx={{ mb: { xs: 12, sm: 2 } }}
         >
           <a
-            href="/White Simple Student CV Resume.pdf"
+            href="/Thet Naung Win's CV Resume.pdf"
             download="cv"
             style={{ color: "white" }}
           >
