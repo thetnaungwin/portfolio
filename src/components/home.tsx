@@ -113,7 +113,7 @@ export function Home_page() {
             }}
           />
         </Link>
-        <Link href="https://github.com/petermelly">
+        <Link href="https://github.com/thetnaungwin">
           <GitHubIcon
             sx={{
               fill: "black",
